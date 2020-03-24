@@ -30,18 +30,18 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-6">
-                  <button class="btn btn-danger">Upgrade Drills</button>
+                  <button onclick="app.gameController.purchaseDrill()" class="btn btn-danger">Upgrade Drills</button>
                   <p class="mb-0 small-text">Drill Level: <span id="drills-level"></span></p>
                   <p class="mt-0 small-text">Drill Cost: <span id="drills-price"></span></p>
-                  <button class="btn btn-danger">Upgrade Rovers</button>
+                  <button onclick="app.gameController.purchaseRover()" class="btn btn-danger">Upgrade Rovers</button>
                   <p class="mb-0 small-text">Rover Level: <span id="rovers-level"></span></p>
                   <p class="mb-0 small-text">Rover Price: <span id="rovers-price"></span></p>
                 </div>
                 <div class="col-6">
-                  <button class="btn btn-danger">Upgrade Mine Carts</button>
+                  <button onclick="app.gameController.purchaseCart()" class="btn btn-danger">Upgrade Mine Carts</button>
                   <p class="mb-0 small-text">Cart Level: <span id="carts-level"></span></p>
                   <p class="mt-0 small-text">Cart Price: <span id="carts-price"></span></p>
-                  <button class="btn btn-danger">Upgrade Harvesters</button>
+                  <button onclick="app.gameController.purchaseHarvester()" class="btn btn-danger">Upgrade Harvesters</button>
                   <p class="mb-0 small-text">Harvester Level: <span id="harvesters-level"></span></p>
                   <p class="mt-0 small-text">Harvester Price: <span id="harvesters-price"></span></p>
                 </div>
@@ -81,7 +81,7 @@
 
     </main>
     <footer class="container-fluid">
-
+      <button onclick="app.gameController.addDust()" class="btn btn-danger">Add 2,500 Dust</button>
     </footer>
       
     <!-- Optional JavaScript -->

@@ -16,7 +16,7 @@ function _drawCounters() {
   document.getElementById("rovers-price").innerText = _gameService.RoverPrice
   document.getElementById("harvesters-level").innerText = _gameService.HarvesterLevel
   document.getElementById("harvesters-price").innerText = _gameService.HarvesterPrice
-
+  document.getElementById("message-center").innerText = _gameService.MessageCenter
 }
 
 // NOTE Public area
@@ -24,10 +24,37 @@ function _drawCounters() {
 export default class GameController{
   constructor(){
     _drawCounters()
+    _gameService.dpcUpdate()
+    _gameService.dpsUpdate()
+    setInterval(this.passiveUpgradeCheck, 2000)
   }
-  harvest(){
+  harvest(){ 
     _gameService.harvest()
     _drawCounters()
   }
-  
+  purchaseDrill(){ 
+    _gameService.purchaseDrill()
+    _drawCounters()
+  }
+  purchaseCart(){
+    _gameService.purchaseCart()
+    _drawCounters()
+  }
+  purchaseRover(){
+    _gameService.purchaseRover()
+    _drawCounters()
+  }
+  purchaseHarvester(){
+    _gameService.purchaseHarvester()
+    _drawCounters()
+  }
+  passiveUpgradeCheck(){
+    _gameService.passiveUpgradeCheck()
+    _drawCounters()
+  }
+  addDust(){
+    _gameService.addDust()
+    _drawCounters()
+  }
+
 }
