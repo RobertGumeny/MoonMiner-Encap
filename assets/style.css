@@ -1,0 +1,29 @@
+header h1 {
+  color: #edc91a;
+  font-family: '8BITWONDERNominal';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 5rem;
+}
+.card-header p{
+  font-family: '8BITWONDERNominal';
+  font-weight: normal;
+  font-style: normal;
+}
+.card-messages{
+  background-color: black;
+  border: 2px solid #6d666b;
+  color: white;
+  font-family: '8BITWONDERNominal';
+  font-weight: normal;
+  font-style: normal;
+}
+.clear-messages{
+  font-size: x-small;
+}
+.small-text{
+  font-size: smaller;
+}
+.space-background{
+  background-image: url(https://jasonbecker.com/wp-content/uploads/2019/01/Space-Background.jpg);
+}
