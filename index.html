@@ -61,9 +61,33 @@
               <p>Current Resources</p>
             </div>
             <div class="card-body">
-              <h5>Moon Dust: <span id="dust-count"></span></h5>
-              <p class="small-text mt-3">Dust Per Click: <span id="dust-per-click"></span></p>
-              <p class="small-text">Dust Per Second: <span id="dust-per-second"></span></p>
+              <div class="row">
+                <div class="col-6">
+                  <button onclick="app.gameController.harvestDust()" class="btn btn-danger">Harvest Dust</button>
+                  <h5 class="my-1">Moon Dust: <span id="dust-count"></span></h5>
+                  <p class="small-text my-0">Dust Per Click: <span id="dust-per-click"></span></p>
+                  <p class="small-text my-0">Dust Per Second: <span id="dust-per-second"></span></p>
+                  <button onclick="app.gameController.harvestRock()" class="btn btn-danger mt-1">Harvest Rocks</button>
+                  <h5 class="my-1">Moon Rocks: <span id="rocks-count"></span></h5>
+                  <p class="small-text my-0">Rocks Per Click: <span id="rocks-per-click"></span></p>
+                  <p class="small-text my-0">Rocks Per Second: <span id="rocks-per-second"></span></p>
+                </div>
+                <div class="col-6">
+                  <button onclick="app.gameController.harvestIron()" class="btn btn-danger">Harvest Iron</button>
+                  <h5 class="my-1">Moon Iron: <span id="iron-count"></span></h5>
+                  <p class="small-text my-0">Iron Per Click: <span id="iron-per-click"></span></p>
+                  <p class="small-text my-0">Iron Per Second: <span id="iron-per-second"></span></p>
+                  <button onclick="app.gameController.harvestGems()" class="btn btn-danger mt-1">Harvest Gems</button>
+                  <h5 class="my-1">Moon Gems: <span id="gems-count"></span></h5>
+                  <p class="small-text my-0">Gems Per Click: <span id="gems-per-click"></span></p>
+                  <p class="small-text my-0">Gems Per Second: <span id="gems-per-second"></span></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 text-center">
+                  <p>Money: <span id="money-count"></span></p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -81,7 +105,13 @@
 
     </main>
     <footer class="container-fluid">
+
       <button onclick="app.gameController.addDust()" class="btn btn-danger">Add 2,500 Dust</button>
+      <button onclick="app.gameController.addRocks()" class="btn btn-danger">Add 2,500 Rocks</button>
+      <button onclick="app.gameController.addIron()" class="btn btn-danger">Add 2,500 Iron</button>
+      <button onclick="app.gameController.addGems()" class="btn btn-danger">Add 2,500 Gems</button>
+      <button onclick="app.gameController.addMoney()" class="btn btn-danger">Add 2,500 Money</button>
+
     </footer>
       
     <!-- Optional JavaScript -->
