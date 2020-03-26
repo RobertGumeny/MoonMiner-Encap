@@ -54,7 +54,8 @@ let _rocksConfigObj = {
   value: 5,
   perClick: 1,
   perSecond: 0,
-  unlocked: false
+  unlocked: false,
+  unlockPrice: 500
 }
 let _ironConfigObj = {
   name: "Moon Iron",
@@ -62,7 +63,8 @@ let _ironConfigObj = {
   value: 25,
   perClick: 1,
   perSecond: 0,
-  unlocked: false
+  unlocked: false,
+  unlockPrice: 1000
 }
 let _gemsConfigObj = {
   name: "Moon Gems",
@@ -71,6 +73,7 @@ let _gemsConfigObj = {
   perClick: 1,
   perSecond: 0,
   unlocked: false,
+  unlockPrice: 2500
 }
 
 let _dust = new Resource(_dustConfigObj)
@@ -117,6 +120,24 @@ export default class GameService{
     this.psUpdate()
     }else{
       console.log("Not unlocked")
+    }
+  }
+  sellResources(){ // NOTE Convert resources to money
+    if (_dust.count > 0){
+      _counts.money += _dust.count * _dust.value
+      _dust.count = 0
+    }
+    if (_rocks.count > 0){
+      _counts.money += _rocks.count * _rocks.value
+      _rocks.count = 0
+    }
+    if (_iron.count > 0){
+      _counts.money += _iron.count * _iron.value
+      _iron.count = 0
+    }
+    if (_gems.count > 0){
+      _counts.money += _gems.count * _gems.value
+      _gems.count = 0
     }
   }
   addDust(){
@@ -192,6 +213,26 @@ export default class GameService{
       _counts.message = "Harvester upgrade purchased"
     }else{
       _counts.message = "Not enough money"
+    }
+  }
+
+  unlockRocks(){
+    if (_counts.money >= _rocks.unlockPrice) {
+      _rocks.unlocked = true;
+      _counts.money -= _rocks.unlockPrice
+    }
+  }
+  unlockIron(){
+    if (_counts.money >= _iron.unlockPrice) {
+      _iron.unlocked = true;
+      _counts.money -= _iron.unlockPrice
+    }
+  }
+
+  unlockGems(){
+    if (_counts.money >= _gems.unlockPrice){
+      _gems.unlocked = true;
+      _counts.money -= _gems.unlockPrice
     }
   }
 
@@ -297,6 +338,15 @@ export default class GameService{
   }
   get HarvesterPrice(){ // NOTE End upgrade counters
     return _harvesters.price.toString()
+  }
+  get RocksPrice(){
+    return _rocks.unlockPrice.toString()
+  }
+  get IronPrice(){
+    return _iron.unlockPrice.toString()
+  }
+  get GemsPrice(){
+    return _gems.unlockPrice.toString()
   }
   get MessageCenter(){
     return _counts.message

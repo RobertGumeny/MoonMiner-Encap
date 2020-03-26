@@ -31,6 +31,10 @@ function _drawCounters() {
   document.getElementById("harvesters-level").innerText = _gameService.HarvesterLevel
   document.getElementById("harvesters-price").innerText = _gameService.HarvesterPrice
   document.getElementById("message-center").innerText = _gameService.MessageCenter
+
+  document.getElementById("rocks-price").innerText = _gameService.RocksPrice
+  document.getElementById("iron-price").innerText = _gameService.IronPrice
+  document.getElementById("gems-price").innerText = _gameService.GemsPrice
 }
 
 // NOTE Public area
@@ -58,6 +62,10 @@ export default class GameController{
     _gameService.harvestGems()
     _drawCounters()
   }
+  sellResources(){
+    _gameService.sellResources()
+    _drawCounters()
+  }
   purchaseDrill(){ 
     _gameService.purchaseDrill()
     _drawCounters()
@@ -72,6 +80,18 @@ export default class GameController{
   }
   purchaseHarvester(){
     _gameService.purchaseHarvester()
+    _drawCounters()
+  }
+  unlockRocks(){
+    _gameService.unlockRocks()
+    _drawCounters()
+  }
+  unlockIron(){
+    _gameService.unlockIron()
+    _drawCounters()
+  }
+  unlockGems(){
+    _gameService.unlockGems()
     _drawCounters()
   }
   passiveUpgradeCheck(){

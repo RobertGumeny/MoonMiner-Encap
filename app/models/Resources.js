@@ -8,5 +8,6 @@ export default class Resource{
     this.perClick = data.perClick
     this.perSecond = data.perSecond
     this.unlocked = data.unlocked
+    this.unlockPrice = data.unlockPrice
   }
 }
